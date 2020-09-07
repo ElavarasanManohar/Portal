@@ -1,0 +1,509 @@
+<html>
+    <head>
+    <title>
+        PortalSite
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+            var c=0;
+            $("#sc").click(function(){
+               
+                if(c==0){
+
+                    $("#d").css("display", "none");
+                    $("#n").css("display", "block");
+                     $("#n").animate(
+    { deg: 180 },
+    {
+      duration: 300,
+      step: function(now) {
+        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+      }
+    }
+  );
+  setTimeout(() => {
+                        $("#n").css("deg", "0");
+                        $("#d").css("deg", "-180");
+        
+    }, 400);
+                    $("#dn").animate({"position": "absolute","right":"0%"},400,'swing');
+                    setTimeout(() => {
+                        $("#dn").css("background-color","#110f12");
+        
+    }, 100);
+                    // $("#dn").css("background-color","#110f12");
+                    $("#nv").css({"background-color":"#09233c", "color" : "#00e7b5"});
+                    $($(".in")[0]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color" :"#02c6f4"});
+                    $($(".in")[1]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color" :"#02c6f4"});
+                    $($(".in")[2]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color" :"#02c6f4"});
+                    $($(".vi")[0]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $($(".vi")[1]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $($(".vi")[2]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $($(".hide")[0]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $($(".hide")[1]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $($(".hide")[2]).css({"border":"3px solid #02c6f4","background-color":"#002d4f","color":"#02c6f4"});
+                    $("#st1").css("background-color","#002d4f");
+                    $("#st2").css("background-color","#002d4f");
+                    $("#st3").css("background-color","#002d4f");
+                    $($(".nametag")[0]).css("color","#00e7b5");
+                    $($(".nametag")[1]).css("color","#00e7b5");
+                    $($(".nametag")[2]).css("color","#00e7b5");InfoCard1
+                    $("#InfoCard1").css({"background-color":"#09233c", "border" : "none" ,"color" : "#02c6f4"});
+                    $("#InfoCard2").css({"background-color":"#09233c", "border" : "none" ,"color" : "#02c6f4"});
+                    $("#InfoCard3").css({"background-color":"#09233c", "border" : "none" ,"color" : "#02c6f4"}); 
+                    $("#b").css("background-color","#09233c");
+                    c=1;
+                    // *Night mode code
+
+                }
+                
+                else
+                {
+                    $("#n").css("display", "none");
+        $("#d").css("display", "block");
+                    $("#d").animate(
+    { deg: 0 },
+    {
+      duration: 200,
+      step: function(now) {
+        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+      }
+    }
+  );
+                    $("#dn").animate({"position": "absolute","right":"50%","background-color":"rgb(8, 117, 219)"},300,'swing');
+                    setTimeout(() => {
+                        $("#dn").css("background-color","rgb(8, 117, 219)");
+        
+    }, 100);
+    setTimeout(() => {
+                        $("#d").css("deg", "0");
+        
+    }, 400);
+                   
+                     $("#nv").css({"background-color":"rgb(8, 117, 219)", "color" : "white"});
+                     $($(".in")[0]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".in")[1]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".in")[2]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".vi")[0]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".vi")[1]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".vi")[2]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":"white"});
+                     $($(".hide")[0]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":" white"});
+                     $($(".hide")[1]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":" white"});
+                     $($(".hide")[2]).css({"border":"none","background-color":"rgb(8, 117, 219)","color":" white"});
+                     $("#st1").css("background-color","white");
+                     $("#st2").css("background-color","white");
+                     $("#st3").css("background-color","white");
+                     $($(".nametag")[0]).css("color","");
+                     $($(".nametag")[1]).css("color","");
+                     $($(".nametag")[2]).css("color","");
+                     $("#InfoCard1").css({"background-color":"white","border":"none","color":"#000000"});
+                    $("#InfoCard2").css({"background-color":"white","border":"none","color":"#000000"});
+                    $("#InfoCard3").css({"background-color":"white","border":"none","color":"#000000"});
+                    $("#b").css("background-color","white");
+                    c=0;
+                    // *Normal mode code
+                }
+            });
+});
+    function GetInfo(a,b,c){
+        $(document).ready(function(){
+            if(a==1)
+            {
+                $("#InfoCard1").css("display","block");
+                $("#InfoCard1").animate({"position": "absolute","height":"91%"},1600,'swing');
+            }
+            else if(b==1)
+            {
+                $("#InfoCard2").css("display","block");
+                $("#InfoCard2").animate({"position": "absolute","height":"91%"},1600,'swing');
+            }
+            else if(c==1)
+            {
+                $("#InfoCard3").css("display","block");
+                $("#InfoCard3").animate({"position": "absolute","height":"91%"},1600,'swing');
+            }
+
+        })
+    }
+
+    function HideInfo(a,b,c){
+        $(document).ready(function(){
+            if(a==1)
+            {
+                $("#InfoCard1").animate({"position": "absolute","height":"0%"},1600,'swing');
+                setTimeout(() => {$("#InfoCard1").css("display","none");
+        },1500,'swing');
+            }
+            
+            else if(b==1)
+            {
+                $("#InfoCard2").animate({"position": "absolute","height":"0%"},1600,'swing');
+                setTimeout(() => {$("#InfoCard2").css("display","none");
+        },1500,'swing');
+            }
+            else if(c==1)
+            {
+                $("#InfoCard3").animate({"position": "absolute","height":"0%"},1600,'swing');
+                setTimeout(() => {$("#InfoCard3").css("display","none");
+        },1500,'swing');
+            }
+
+        })
+
+    }
+    
+</script>
+    <style>
+        #nv{
+            position: absolute;
+            background-color: rgb(8, 117, 219);
+            height:50%;
+            width: 94.2%;
+            text-align: left;
+            padding: 15px 32px;
+            border-radius: 5px;
+            color: white;
+            font-size: 270%;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        #st1,#st2,#st3{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #b{
+             background-color:white;  
+            } 
+        .in{
+            position: absolute;
+            background-color: rgb(8, 117, 219); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  height:12%;
+  width: 30%;
+  left: 10%;
+  top:85%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+
+          .vi{
+            position: absolute;
+            background-color: rgb(8, 117, 219); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  height:12%;
+  width: 30%;
+  left: 50%;
+  top:85%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+          .hide{
+            position: absolute; 
+            background-color: rgb(8, 117, 219); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  height:12%;
+  width: 30%;
+  left: 10%;
+  top:75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+        #st1{
+                position: absolute;
+                height: 55%;
+                width: 30%;
+                top :30%;
+                right:67.5%;
+                float: left;
+                background-color:white;  
+                border-radius: 5px;
+            }
+            #st2{
+                position: absolute;
+                height: 55%;
+                width: 30%;
+                top :30%;
+                right:35.2%;
+                float: left;
+                background-color:white;  
+                border-radius: 5px;
+            }
+            #st3{
+                position: absolute;
+                height: 55%;
+                width: 30%;
+                top :30%;
+                right:2.8%;
+                float: left;
+                background-color:white; 
+                border-radius: 5px;
+            }
+            #st1:hover,#st2:hover,#st3:hover {
+                top :27%;
+}
+          #ImgCard{
+                position: absolute;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  height: 55%;
+  width: 75%  ;
+  left:2%;
+  top:5%;
+            }
+.nametag{
+    position: absolute;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 150%;
+  left:25%;
+  top:58%;
+}
+       #InfoCard1{
+                position: absolute;
+                background-color:white; 
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  width: 84.5%;  
+  display: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            #InfoCard2{
+                position: absolute;
+                background-color:white; 
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  width: 84.5%;  
+  display: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            #InfoCard3{
+                position: absolute;
+                background-color:white; 
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 2.5%;
+  font-size: 110%;
+  width: 84.5%;
+  display: none;  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            #title1{
+                position: absolute;
+                top:-1%;
+            }
+            #title2{
+                position: absolute;
+                top:22%;
+                font-size : 60%;
+            }
+            #sc{
+                position: relative;
+                height:0%;
+                width:8%;
+                top : 10%;
+                right:-80%;
+                background-color:white;
+                border: 2px solid  rgb(178, 190, 201);
+                color :#00e7b5;
+                text-align: center;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                padding-bottom: 4%;
+                border-radius: 100px;
+            }
+            #dn{
+                position: absolute;
+                width: 50%;
+	            height:0%;
+                top : 0%;
+                right:50%;
+                background-color:rgb(8, 117, 219);
+                padding-bottom: 50%;
+                border-radius: 50%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            #d{
+                position: absolute;
+                top :-58%;
+                right:25%;
+                font-size: 2.7vw;
+                color:white;
+                text-align: center;
+            }
+            #n{
+                position: absolute;
+                top :-58%;
+                right:25%;
+                font-size: 2.7vw;
+                display: none;
+                text-align: center;
+            }
+
+                @media screen and (max-width:800px) {
+                    #nv{ 
+                        width: 84%;
+                        left :0%;
+                    }
+                #st1 {
+                position: absolute;
+                height: 50%;
+                width: 98%;
+                top :25%;
+                right:1%;
+                }
+                #st1:hover {
+                    top :25%;
+                }
+                #st2 {
+                position: absolute;
+                height: 50%;
+                width: 98%;
+                top :80%;
+                right:1%;
+                }
+                #st2:hover {
+                    top :80%;
+                }
+                #st3 {
+                position: absolute;
+                height: 50%;
+                width: 98%;
+                top :135%;
+                right:1%;
+                }
+                #st3:hover {
+                    top :135%;
+                }
+                #InfoCard1,#InfoCard2,#InfoCard3{
+                    width: 80%;  
+                }
+                #ImgCard:hover {
+                    top:0%;
+                }
+            #title1{
+                position: absolute;
+                top:-1%;
+                font-size : 100%;
+            }
+            #title2{
+                position: absolute;
+                top:20%;
+                font-size : 50%;
+            }
+            #sc{
+                width:14%;
+                padding-bottom: 7%;
+                right:-80%;
+                top : 9%;
+            }
+            #d{
+                position: absolute;
+                top :-58%;
+                right:25%;
+                font-size: 4.7vw;
+                text-align: center;
+            }
+            #n{
+                position: absolute;
+                top :-58%;
+                right:25%;
+                font-size: 4.7vw;
+                text-align: center;
+            }
+
+}
+    </style>
+</head>
+    <body id="b">
+        <div id="nv">
+           <p id="title1">IEV-PORT</p>
+           <p id="title2">->Platform for unique websites</p>
+        </div>
+        <div id="sc">
+            <div id="dn">
+                <p id="d">D</p>
+                <p id="n">N</p>
+            </div>
+        </div>
+        
+        <div id=st1>
+            <button class='in' onclick="GetInfo(1,0,0)">Info</button>
+            <a href="https://elavarasanmanohar.github.io/WebTimers">
+                <button class='vi'>Visit</button>
+            </a>
+            <div ><img src="WebTimer.jpg" alt="WebTimer" id="ImgCard">
+                <h2 class="nametag">WebTimer</h2></div>
+            <div id="InfoCard1">
+                
+                    <h2>WebTimer</h2> 
+                    <p> - This is used to calculate the Office out Time(9+ hrs)</p>
+                    <p>- Timer is simple and easy to use</p>
+                    <h3> - What's new</h3>
+                    <p> - Dark Theme available</p>
+                
+                <button class='hide' onclick="HideInfo(1,0,0)">Hide</button>
+            </div>
+        </div>
+        <div id=st2>
+            <button class='in' onclick="GetInfo(0,1,0)">Info</button>
+            <a href="https://elavarasanmanohar.github.io/CalItemizedBill">
+                <button class='vi'>Visit</button>
+            </a>
+            <div ><img src="ItemizedBill.jpg" alt="ItemizedBill" id="ImgCard">
+                <h2 class="nametag">ItemizedBill</h2></div>
+            <div id="InfoCard2">
+                <h2>ItemizedBill</h2> 
+                <p> - This is used to calculate the Product Bill</p>
+                <p> - Simple and easy to use</p>
+                <h3> - What's new</h3>
+                <p> - Fresh UI</p>
+                <button class='hide' onclick="HideInfo(0,1,0)">Hide</button>
+            </div>
+        </div>
+        <div id=st3>
+            <button class='in' onclick="GetInfo(0,0,1)">Info</button>
+            <a href="https://elavarasanmanohar.github.io/Puzzle">
+                <button class='vi'>Visit</button>
+            </a>
+            <div ><img src="Puzzle.jpg" alt="Puzzle" id="ImgCard">
+                <h2 class="nametag">Puzzle Game</h2></div>
+            <div id="InfoCard3">
+                <h2>Puzzle Game</h2> 
+                <p> - Tap and move the number tiles</p>
+                <p> - 3 х 3 (8 tiles) – for beginners and kids;</p>
+                <h3> - What's new</h3>
+                <p> - Fixed some bugs </p>
+                <button class='hide' onclick="HideInfo(0,0,1)">Hide</button>
+            </div>
+        </div>
+    </body>
+</html>
